@@ -1,0 +1,102 @@
+// В этом файле должны быть стили для БЭМ-блока hero, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.hero {
+
+  $block-name:                &; // #{$block-name}__element
+
+  z-index: 50;
+
+  &__wrapper {
+
+    @media (min-width: $screen-xs) {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-640p.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-1280p.webp');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        .no-webp & {
+          background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-1280p.jpg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+
+      .no-webp & {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-640p.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-1280p.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-2560p.webp');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        .no-webp & {
+          background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-2560p.jpg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+
+      .no-webp & {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-1280p.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: $screen-xxl) {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-2560p.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      .no-webp & {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-2560p.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__heading-wrapper {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__heading {
+    border-bottom: 0.2rem solid #d50000;
+
+    font-size: 10rem;
+    font-weight: 300;
+    text-align: right;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    user-select: none;
+  }
+}

@@ -2,18 +2,13 @@ extends ../pug/layout.pug
 
 append config
   -
-    currentTitle = 'Home'
-    currentDescription = 'New website'
+    currentTitle = 'Wine house'
+    currentDescription = 'Wine house website'
     currentUrl = 'index.html'
 
 block content
-
-  h1 Top news
-
-  ol
-    li Man Found Having Tea Party With Donkey Again
-    li Woman With Epic Tattoo Arrested for 37th Time
-    li Viral Photo of Donkey Had Been Photoshopped
-    li Man Buys Hats For Low Income Local Family
-    li Man Jailed For Threatening Wife With Crumpled Hawk
-    li Small Tornado Forcast in Northern Regions
+  section.hero#hero
+    .section-wrapper.hero__wrapper
+      .hero__heading-wrapper
+        h1.hero__heading The best wines around the world
+  ///.hero

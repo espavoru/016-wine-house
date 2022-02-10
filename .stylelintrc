@@ -481,11 +481,11 @@
     "max-empty-lines": [3, {
       "message": "Максимум линий пустых допустимо: 3"
     }],
-    "max-nesting-depth": [3, {
-      "message": "Вложения боле 3 уровней — на тёмную сторону путь",
-      "severity": "warning",
-      "ignore": ["blockless-at-rules"]
-    }],
+    #"max-nesting-depth": [3, {
+    #  "message": "Вложения боле 3 уровней — на тёмную сторону путь",
+    #  "severity": "warning",
+    #  "ignore": ["blockless-at-rules"]
+    #}],
     "no-duplicate-selectors": [true, {
       "message": "Селекторы дублировать не хочешь ты"
     }],
@@ -539,10 +539,10 @@
     # "selector-nested-pattern": ["^(&|\\.\\w+\\s+&)(__\\w|--\\w)?", {
     #   "message": "Вкладывать такой селектор нельзя"
     # }],
-    "selector-pseudo-class-disallowed-list": [["/^nth-/", ], {
-      # "severity": "warning",
-      "message": "Псевдокласс такой использовать не стоит"
-    }],
+    #"selector-pseudo-class-disallowed-list": [["/^nth-/", ], {
+    #  # "severity": "warning",
+    #  "message": "Псевдокласс такой использовать не стоит"
+    #}],
     "value-list-max-empty-lines": [0, {
       "message": "Пустые строки в значениях свойств недопустимы"
     }],
