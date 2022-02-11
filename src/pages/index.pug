@@ -12,3 +12,22 @@ block content
       .hero__heading-wrapper
         h1.hero__heading The best wines around the world
   ///.hero
+
+  section.sale#sale
+    .sale__wrapper.section-wrapper
+      .sale__order
+        +picture({
+          'img': 'sale-01',
+          'alt': 'Sale bag',
+          'lg': false,
+          'ext': 'png'
+        }, 'sale__img').sale__img-wrapper.sale__img-wrapper--bag
+        +btn('order now!').sale__btn(href='#')
+      +picture({
+        'img': 'sale-02',
+        'alt': 'Wine Bottle',
+        'lg': false,
+        'ext': 'png'
+      }, 'sale__img').sale__img-wrapper.sale__img-wrapper--bottle
+
+  ///.sale

@@ -1,0 +1,124 @@
+// В этом файле должны быть стили для БЭМ-блока sale, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.sale {
+
+  $block-name:                &; // #{$block-name}__element
+
+  z-index: 50;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @media (min-width: $screen-xs) {
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-640p.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-1280p.webp');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        .no-webp & {
+          background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-1280p.jpg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+
+      .no-webp & {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-640p.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-1280p.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-2560p.webp');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        .no-webp & {
+          background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-2560p.jpg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+
+      .no-webp & {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-1280p.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: $screen-xxl) {
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-2560p.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      .no-webp & {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-2560p.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img-wrapper--bag {
+    opacity: 0.9;
+    width: 45rem;
+  }
+
+  &__btn.btn {
+    width: 20rem;
+    height: 5rem;
+    margin-top: 4rem;
+    border: 0.1rem solid #fff;
+    border-radius: 0;
+
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+
+    transition: background-color 0.2s;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $text-color-accent;
+    }
+  }
+
+  &__img-wrapper--bottle {
+    width: 80rem;
+    opacity: 0.6;
+  }
+}

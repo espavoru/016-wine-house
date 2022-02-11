@@ -27,7 +27,7 @@ mixin picture(data, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + '' + modsList[i].trim();
+        allMods = allMods + ' ' + modsList[i].trim();
       }
     }
     data = data || {}
