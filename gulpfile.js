@@ -430,7 +430,8 @@ function serve() {
   ));
 
   // Картинки: все события
-  watch([`${dir.blocks}**/img/*.{jpg,jpeg,png,gif,svg,webp}`], { events: ['all'], delay: 100 }, series(copyImg, reload));
+  watch([`${dir.blocks}**/img/**`], { events: ['all'], delay: 100 }, series(copyImg, reload));
+  // watch([`${dir.blocks}**/img/*.{jpg,jpeg,png,gif,svg,webp}`], { events: ['all'], delay: 100 }, series(copyImg, reload));
 
   // Спрайт SVG
   watch([`${dir.blocks}sprite-svg/svg/*.svg`], { events: ['all'], delay: 100 }, series(
