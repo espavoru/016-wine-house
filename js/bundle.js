@@ -119,6 +119,17 @@ eval("function _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol ===
 
 /***/ }),
 
+/***/ "./src/blocks/progress/progress.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/progress/progress.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("var counter1 = 0;\nvar counter2 = 1;\nvar bool = true;\nvar sections = document.querySelectorAll('section');\nvar progress = document.querySelector('.progress h2');\nvar circles = document.querySelectorAll('.progress__circle');\n\nvar progressCounter = function progressCounter() {\n  progress.textContent = \"\".concat(counter2, \"/\").concat(sections.length);\n  Array.from(circles).forEach(function (circle) {\n    circle.style.backgroundColor = 'transparent';\n  });\n  document.querySelector(\".progress__circle:nth-of-type(\".concat(counter2, \")\")).style.backgroundColor = '#ddd';\n};\n\nvar pageController = function pageController() {\n  bool = true;\n\n  if (counter1 === 5) {\n    Array.from(sections).forEach(function (section) {\n      section.style.left = '0';\n    });\n    counter1 = 0;\n    counter2 = 1;\n    progressCounter();\n    bool = false;\n  }\n\n  if (counter1 === -1) {\n    Array.from(sections).forEach(function (section) {\n      if (section.classList[0] === 'section:nth-of-type(5)') {\n        return;\n      }\n\n      section.style.left = '-100vw';\n    });\n    counter1 = 4;\n    counter2 = 5;\n    progressCounter();\n    bool = false;\n  }\n\n  progressCounter();\n  return bool;\n};\n\nwindow.addEventListener('wheel', function (e) {\n  var deltaY = e.deltaY > 0;\n\n  if (deltaY) {\n    counter1++;\n    counter2++;\n  } else {\n    counter1--;\n    counter2--;\n  }\n\n  pageController();\n  progressCounter();\n  console.log(counter1, counter2);\n  bool && (document.querySelector(\"section:nth-of-type(\".concat(deltaY ? counter1 : counter2, \")\")).style.left = \"\".concat(deltaY ? '-100vw' : '0'));\n});\ndocument.querySelector('.page__btn--left').addEventListener('click', function () {\n  counter1--;\n  counter2--;\n  pageController() && (document.querySelector(\"section:nth-of-type(\".concat(counter2, \")\")).style.left = '0');\n  console.log(counter1, counter2);\n});\ndocument.querySelector('.page__btn--right').addEventListener('click', function () {\n  counter1++;\n  counter2++;\n  pageController() && (document.querySelector(\"section:nth-of-type(\".concat(counter1, \")\")).style.left = '-100vw');\n  console.log(counter1, counter2);\n});\ndocument.querySelector('.wineyards__img-wrapper--grapes').addEventListener('mouseover', function () {\n  document.querySelector('.wineyards__wrapper').style.opacity = '0.5';\n});\ndocument.querySelector('.wineyards__img-wrapper--grapes').addEventListener('mouseout', function () {\n  document.querySelector('.wineyards__wrapper').style.opacity = '1';\n});\n\n//# sourceURL=webpack:///./src/blocks/progress/progress.js?");
+
+/***/ }),
+
 /***/ "./src/js/entry.js":
 /*!*************************!*\
   !*** ./src/js/entry.js ***!
@@ -126,7 +137,7 @@ eval("function _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol ===
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/*!*\n * ВНИМАНИЕ! Этот файл генерируется автоматически.\n * Любые изменения этого файла будут потеряны при следующей компиляции.\n * Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n */\n__webpack_require__(/*! ../blocks/modernizr/modernizr.js */ \"./src/blocks/modernizr/modernizr.js\");\n\n__webpack_require__(/*! ../blocks/burger/burger.js */ \"./src/blocks/burger/burger.js\");\n\n__webpack_require__(/*! ../blocks/main-nav/main-nav.js */ \"./src/blocks/main-nav/main-nav.js\");\n\n__webpack_require__(/*! ./script.js */ \"./src/js/script.js\");\n/*!*\n * ВНИМАНИЕ! Этот файл генерируется автоматически.\n * Любые изменения этого файла будут потеряны при следующей компиляции.\n * Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n */\n\n//# sourceURL=webpack:///./src/js/entry.js?");
+eval("/*!*\n * ВНИМАНИЕ! Этот файл генерируется автоматически.\n * Любые изменения этого файла будут потеряны при следующей компиляции.\n * Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n */\n__webpack_require__(/*! ../blocks/modernizr/modernizr.js */ \"./src/blocks/modernizr/modernizr.js\");\n\n__webpack_require__(/*! ../blocks/burger/burger.js */ \"./src/blocks/burger/burger.js\");\n\n__webpack_require__(/*! ../blocks/main-nav/main-nav.js */ \"./src/blocks/main-nav/main-nav.js\");\n\n__webpack_require__(/*! ../blocks/progress/progress.js */ \"./src/blocks/progress/progress.js\");\n\n__webpack_require__(/*! ./script.js */ \"./src/js/script.js\");\n/*!*\n * ВНИМАНИЕ! Этот файл генерируется автоматически.\n * Любые изменения этого файла будут потеряны при следующей компиляции.\n * Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n */\n\n//# sourceURL=webpack:///./src/js/entry.js?");
 
 /***/ }),
 

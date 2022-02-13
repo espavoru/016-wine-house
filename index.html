@@ -66,9 +66,27 @@ document.addEventListener("DOMContentLoaded", () => {
 <body><noscript>Enable JavaScript please.</noscript>
   <div class="page__inner">
     <div class="page__content">
-      <header class="page-header" role="banner">
-        <div class="page-header__inner"></div>
-      </header>
+      <div class="navbar"><a class="logo__link" href="#">
+          <picture class="picture logo__img-wrapper">
+            <source media="(min-width: 0)" type="image/webp" srcset="img/logo-01-640p.webp, img/logo-01-1280p.webp 2x" /><img class=" logo__img" alt="Logo" width="640" src="img/logo-01-640p.png" srcset="img/logo-01-1280p.png 2x" />
+          </picture>
+        </a>
+        <nav class="navbar__list"><a class="navbar__link" href="#hero">Home</a><a class="navbar__link" href="#sale">Vineyards</a><a class="navbar__link" href="#wineyards">Grapes</a><a class="navbar__link" href="#new-wines">Wine</a><a class="navbar__link" href="#contact">Contact</a></nav>
+      </div>
+      <!--/.navbar--><button class="page__btn page__btn--left"><img src="/img/arrow.png" alt="Arrow icon"></button><button class="page__btn page__btn--right"><img src="/img/arrow.png" alt="Arrow icon"></button>
+      <div class="progress__wrapper">
+        <div class="progress">
+          <h2>1/5</h2>
+        </div>
+        <div class="progress__circles-wrapper">
+          <div class="progress__circle"></div>
+          <div class="progress__circle"></div>
+          <div class="progress__circle"></div>
+          <div class="progress__circle"></div>
+          <div class="progress__circle"></div>
+        </div>
+      </div>
+      <!--/.progress-->
       <section class="hero" id="hero">
         <div class="section-wrapper hero__wrapper">
           <div class="hero__heading-wrapper">
