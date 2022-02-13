@@ -59,6 +59,43 @@
   &__footer-wrapper {
     flex-shrink: 0;
   }
+
+  &__btn {
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    border: none;
+
+    transform: translateY(-50%);
+    background-color: transparent;
+
+    img {
+      width: 4rem;
+      opacity: 0.4;
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+
+    img:hover {
+      opacity: 1;
+    }
+
+    &--left {
+      left: 4rem;
+    }
+
+    &--left img {
+      transform: rotate(-90deg);
+    }
+
+    &--right {
+      right: 4rem;
+    }
+
+    &--right img {
+      transform: rotate(90deg);
+    }
+  }
 }
 
 .section-wrapper {

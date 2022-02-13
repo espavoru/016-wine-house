@@ -3,23 +3,52 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .progress {
-  margin-top: $typo-margin-vertical;
-  margin-bottom: $typo-margin-vertical;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  // margin-top: $typo-margin-vertical;
+  // margin-bottom: $typo-margin-vertical;
+  // border: 1px solid $border-color;
+  // border-radius: $border-radius;
+  // text-align: center;
+
+  // &__bar {
+  //   background-color: $gray-lightest;
+  //   border-radius: $border-radius;
+  //   max-width: 100%;
+  //   min-height: 1px;
+  //   white-space: nowrap;
+  //   transition: width $transition-time;
+  // }
+
+  // &__bartext {
+  //   display: inline-block;
+  //   padding: 0.5em;
+  // }
+
+  margin: 1rem 0;
   text-align: center;
 
-  &__bar {
-    background-color: $gray-lightest;
-    border-radius: $border-radius;
-    max-width: 100%;
-    min-height: 1px;
-    white-space: nowrap;
-    transition: width $transition-time;
+  &__wrapper {
+    position: fixed;
+    z-index: 100;
+    bottom: 2rem;
+    left: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #fff;
+    }
   }
 
-  &__bartext {
-    display: inline-block;
-    padding: 0.5em;
+  &__circles-wrapper {
+    display: flex;
+  }
+
+  &__circle {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+    border-radius: 50%;
+    border: 0.1rem solid #fff;
   }
 }

@@ -6,7 +6,42 @@ append config
     currentDescription = 'Wine house website'
     currentUrl = 'index.html'
 
+block header
+  block nav
+    .navbar
+      a.logo__link(href='#')
+        +picture({
+          'img': 'logo-01',
+          'alt': 'Logo',
+          'lg': false,
+          'ext': 'png'
+        }, 'logo__img').logo__img-wrapper
+
+      nav.navbar__list
+        a.navbar__link(href='#hero') Home
+        a.navbar__link(href='#sale') Vineyards
+        a.navbar__link(href='#wineyards') Grapes
+        a.navbar__link(href='#new-wines') Wine
+        a.navbar__link(href='#contact') Contact
+    ///.navbar
+
 block content
+  button.page__btn.page__btn--left
+    img(src='/img/arrow.png', alt='Arrow icon')
+  button.page__btn.page__btn--right
+    img(src='/img/arrow.png', alt='Arrow icon')
+
+  .progress__wrapper
+    .progress
+      h2 1/5
+    .progress__circles-wrapper
+      .progress__circle
+      .progress__circle
+      .progress__circle
+      .progress__circle
+      .progress__circle
+  ///.progress
+
   section.hero#hero
     .section-wrapper.hero__wrapper
       .hero__heading-wrapper
