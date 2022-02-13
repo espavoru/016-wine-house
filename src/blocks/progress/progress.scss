@@ -50,5 +50,10 @@
     margin-left: 0.3rem;
     border-radius: 50%;
     border: 0.1rem solid #fff;
+    transition: background-color 0.3s;
+
+    &first-child {
+      background-color: #ddd;
+    }
   }
 }

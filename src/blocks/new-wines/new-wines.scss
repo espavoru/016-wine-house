@@ -6,6 +6,8 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  z-index: 20;
+
   &__wrapper {
     display: flex;
     flex-direction: column;

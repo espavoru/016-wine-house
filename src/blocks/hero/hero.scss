@@ -6,6 +6,8 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  z-index: 50;
+
   &__wrapper {
 
     @media (min-width: $screen-xs) {

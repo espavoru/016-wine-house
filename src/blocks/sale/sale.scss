@@ -6,6 +6,8 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  z-index: 40;
+
   &__wrapper {
     display: flex;
     align-items: center;
