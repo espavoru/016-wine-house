@@ -52,7 +52,7 @@
     border: 0.1rem solid #fff;
     transition: background-color 0.3s;
 
-    &first-child {
+    &:first-child {
       background-color: #ddd;
     }
   }

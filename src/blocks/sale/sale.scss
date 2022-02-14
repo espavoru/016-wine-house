@@ -9,9 +9,9 @@
   z-index: 40;
 
   &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-evenly;
 
     @media (min-width: $screen-xs) {
       background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-640p.webp');
@@ -92,6 +92,10 @@
   }
 
   &__img-wrapper--bag {
+    @include to(1600px) {
+      width: 35rem;
+    }
+
     opacity: 0.9;
     width: 45rem;
   }
@@ -118,6 +122,10 @@
   }
 
   &__img-wrapper--bottle {
+    @include to(1600px) {
+      width: 65rem;
+    }
+
     width: 80rem;
     opacity: 0.6;
   }
