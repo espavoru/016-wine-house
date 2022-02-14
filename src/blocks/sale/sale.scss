@@ -12,6 +12,9 @@
     // display: flex;
     // align-items: center;
     // justify-content: space-evenly;
+    @include u-row-flex(0);
+    padding-left: 7rem;
+    padding-right: 7rem;
 
     @media (min-width: $screen-xs) {
       background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('../img/sale-bg-01-640p.webp');
@@ -85,6 +88,9 @@
   }
 
   &__order {
+    @include col;
+    @include size(4);
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,12 +98,8 @@
   }
 
   &__img-wrapper--bag {
-    @include to(1600px) {
-      width: 35rem;
-    }
-
     opacity: 0.9;
-    width: 45rem;
+    // width: 45rem;
   }
 
   &__btn.btn {
@@ -122,11 +124,22 @@
   }
 
   &__img-wrapper--bottle {
+    @include col;
+    @include size(7);
+    @include shift-left(1);
+
     @include to(1600px) {
-      width: 65rem;
+      // width: 65rem;
     }
 
-    width: 80rem;
+    // width: 80rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0.6;
+
+    img {
+      width: 100%;
+    }
   }
 }
