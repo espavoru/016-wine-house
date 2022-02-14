@@ -9,9 +9,12 @@
   z-index: 40;
 
   &__wrapper {
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-evenly;
+    @include to(1000px) {
+      display: flex;
+      justify-content: center;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
     @include u-row-flex(0);
     padding-left: 7rem;
     padding-right: 7rem;
@@ -90,6 +93,9 @@
   &__order {
     @include col;
     @include size(4);
+    @include to(1000px) {
+      @include size(5);
+    }
 
     display: flex;
     flex-direction: column;
@@ -99,10 +105,16 @@
 
   &__img-wrapper--bag {
     opacity: 0.9;
-    // width: 45rem;
   }
 
   &__btn.btn {
+    @include to(1200px) {
+      width: 90%;
+      max-width: 30rem;
+      height: 4rem;
+      font-size: 1.7rem;
+    }
+
     width: 20rem;
     height: 5rem;
     margin-top: 4rem;
@@ -128,11 +140,12 @@
     @include size(7);
     @include shift-left(1);
 
-    @include to(1600px) {
-      // width: 65rem;
+    @include to(1000px) {
+      @include size(10);
+      @include shift(2);
+      order: -1;
     }
 
-    // width: 80rem;
     display: flex;
     align-items: center;
     justify-content: center;

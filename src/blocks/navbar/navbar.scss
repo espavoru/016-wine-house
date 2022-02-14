@@ -29,6 +29,11 @@
   }
 
   &__link {
+    @include to(1200px) {
+      margin-right: 1.5rem;
+      margin-left: 1.5rem;
+    }
+
     position: relative;
     width: 15rem;
     margin-right: 3rem;

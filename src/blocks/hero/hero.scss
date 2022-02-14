@@ -9,6 +9,9 @@
   z-index: 50;
 
   &__wrapper {
+    @include to(1200px) {
+      @include u-row-flex(0);
+    }
 
     @media (min-width: $screen-xs) {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('../img/hero-bg-01-640p.webp');
@@ -82,6 +85,11 @@
   }
 
   &__heading-wrapper {
+    @include to(1200px) {
+      @include col;
+      @include size(10);
+    }
+
     position: absolute;
     top: 70%;
     left: 50%;
@@ -89,6 +97,10 @@
   }
 
   &__heading {
+    @include to(1200px) {
+      font-size: 8rem;
+    }
+
     border-bottom: 0.2rem solid $text-color-accent;
 
     font-size: 10rem;
