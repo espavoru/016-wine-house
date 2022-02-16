@@ -9,6 +9,9 @@
   z-index: 10;
 
   &__wrapper {
+    @include to(1000px) {
+      flex-direction: column;
+    }
     @include u-row-flex(0);
     align-items: center;
     justify-content: center;
@@ -96,6 +99,10 @@
   }
 
   &__list {
+    @include to(1000px) {
+      width: 20rem;
+      margin: 2rem 0;
+    }
     padding: 0;
     list-style: none;
 
@@ -119,6 +126,10 @@
   }
 
   &__img-wrapper.picture {
+    @include to(1000px) {
+      @include size(4);
+      order: 1;
+    }
     @include col;
     @include size(4);
     opacity: 0.9;

@@ -141,9 +141,9 @@
     @include shift-left(1);
 
     @include to(1000px) {
-      @include size(10);
-      @include shift(2);
+      @include size(8);
       order: -1;
+      margin: 0;
     }
 
     display: flex;

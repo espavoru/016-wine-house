@@ -94,6 +94,10 @@
   }
 
   &__heading {
+    @include to(1000px) {
+      font-size: 8rem;
+    }
+
     margin: 0;
     margin-bottom: 7rem;
 
@@ -104,10 +108,15 @@
   }
 
   &__img-wrapper.picture {
-    width: 70rem;
+    @include to(1000px) {
+      width: 90%;
+    }
+
+    width: 61%;
   }
 
   &__img {
+    width: inherit;
     border: 0.1rem solid #fff;
     padding: 1rem;
     opacity: 0.7;

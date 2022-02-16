@@ -6,6 +6,11 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  @include to(1000px) {
+    justify-content: start;
+    padding-left: 2rem;
+  }
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -24,12 +29,29 @@
   }
 
   &__list {
+    @include to(1000px) {
+      flex-direction: column;
+      justify-content: start;
+      position: absolute;
+      top: 5rem;
+      right: 0;
+      height: calc(100vh - 5rem);
+      border-radius: 0.5rem 0 0 0; // stylelint-disable-line
+      padding: 2rem;
+
+      background-color: #333;
+    }
+
     display: flex;
     justify-content: center;
   }
 
   &__link {
     @include to(1200px) {
+      @include to(1000px) {
+        margin: 1rem;
+      }
+
       margin-right: 1.5rem;
       margin-left: 1.5rem;
     }

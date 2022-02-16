@@ -1,0 +1,42 @@
+// В этом файле должны быть стили для БЭМ-блока menu, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.menu {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @include to(1000px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 4rem;
+    height: 2.5rem;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  display: none;
+
+  &__line {
+    width: 100%;
+    height: 0.3rem;
+    background-color: $text-color-accent;
+
+    &--1 {
+      transform: rotate(40deg) translate(0.5rem, 1rem);
+    }
+
+    &--2 {
+      transform: translate(-0.2rem, 2rem);
+    }
+
+    &--3 {
+      transform: rotate(-40deg) translate(0.5rem, -1rem);
+    }
+  }
+}
