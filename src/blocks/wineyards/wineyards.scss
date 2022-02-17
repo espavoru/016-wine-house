@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1.5s;
+    // transition: all 1.5s;
 
     @media (min-width: $screen-xs) {
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url('../img/wineyards-bg-01-640p.webp');
@@ -92,6 +92,19 @@
       font-size: 12rem;
     }
 
+    @include to(800px) {
+      font-size: 11rem;
+      opacity: 0.7;
+    }
+
+    @include to(600px) {
+      font-size: 10rem;
+    }
+
+    @include to(500px) {
+      font-size: 8rem;
+    }
+
     margin: 0;
     transform: rotate(-20deg);
 
@@ -128,6 +141,10 @@
     }
 
     &--grapes:hover {
+      @include to(500px) {
+        transform: scale(4);
+      }
+
       opacity: 1;
       transform: scale(2);
     }

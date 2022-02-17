@@ -96,6 +96,11 @@
   &__heading {
     @include to(1000px) {
       font-size: 8rem;
+      text-align: center;
+    }
+
+    @include to(600px) {
+      font-size: 6rem;
     }
 
     margin: 0;
@@ -110,6 +115,10 @@
   &__img-wrapper.picture {
     @include to(1000px) {
       width: 90%;
+    }
+
+    @include to(600px) {
+      width: 80%;
     }
 
     width: 61%;

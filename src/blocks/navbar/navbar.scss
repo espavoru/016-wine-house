@@ -34,12 +34,21 @@
       justify-content: start;
       position: absolute;
       top: 5rem;
-      right: 0;
+      right: -21rem;
       height: calc(100vh - 5rem);
       border-radius: 0.5rem 0 0 0; // stylelint-disable-line
       padding: 2rem;
 
+      transition: right 0.5s;
       background-color: #333;
+
+      .change & {
+        right: 0;
+      }
+    }
+
+    @include to(500px) {
+      top: 10rem;
     }
 
     display: flex;

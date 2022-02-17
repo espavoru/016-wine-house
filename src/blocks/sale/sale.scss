@@ -93,6 +93,7 @@
   &__order {
     @include col;
     @include size(4);
+
     @include to(1000px) {
       @include size(5);
     }
@@ -113,6 +114,12 @@
       max-width: 30rem;
       height: 4rem;
       font-size: 1.7rem;
+    }
+
+    @include to(600px) {
+      width: 80%;
+      height: 3rem;
+      font-size: 1.4rem;
     }
 
     width: 20rem;
@@ -144,6 +151,10 @@
       @include size(8);
       order: -1;
       margin: 0;
+    }
+
+    @include to(800px) {
+      @include size(10);
     }
 
     display: flex;

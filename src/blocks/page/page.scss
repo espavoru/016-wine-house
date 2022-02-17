@@ -27,6 +27,10 @@
 
 
 .page {
+  @include to(500px) {
+    font-size: 45%;
+  }
+
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-text-size-adjust: 100%; // stylelint-disable-line
@@ -83,6 +87,14 @@
     }
 
     &--left {
+      @include to(800px) {
+        left: 2rem;
+      }
+
+      @include to(500px) {
+        left: 0.5rem;
+      }
+
       left: 4rem;
     }
 
@@ -91,6 +103,14 @@
     }
 
     &--right {
+      @include to(800px) {
+        right: 2rem;
+      }
+
+      @include to(500px) {
+        right: 0.5rem;
+      }
+
       right: 4rem;
     }
 
@@ -103,6 +123,9 @@
 .section-wrapper {
   width: inherit;
   height: inherit;
+
+  transform: scale(1.5);
+  transition: all 2s;
 }
 
 *,

@@ -6,6 +6,11 @@ const sections = document.querySelectorAll('section')
 const progress = document.querySelector('.progress h2')
 const circles = document.querySelectorAll('.progress__circle')
 
+const hero__wrapper = document.querySelector('.hero__wrapper')
+const contact__wrapper = document.querySelector('.contact__wrapper')
+
+hero__wrapper.style.transform = 'scale(1)'
+
 const progressCounter = () => {
   progress.textContent = `${counter2}/${sections.length}`
 
@@ -26,6 +31,10 @@ const pageController = () => {
 
     counter1 = 0
     counter2 = 1
+
+    hero__wrapper.style.transform = 'scale(1)'
+    contact__wrapper.style.transform = 'scale(1.5)'
+
     progressCounter()
 
     bool = false
@@ -33,7 +42,7 @@ const pageController = () => {
 
   if (counter1 === -1) {
     Array.from(sections).forEach(section => {
-      if (section.classList[0] === 'section:nth-of-type(5)') {
+      if (section.classList[0] === 'contact') {
         return
       }
 
@@ -42,6 +51,10 @@ const pageController = () => {
 
     counter1 = 4
     counter2 = 5
+
+    hero__wrapper.style.transform = 'scale(1.5)'
+    contact__wrapper.style.transform = 'scale(1)'
+
     progressCounter()
 
     bool = false
@@ -65,7 +78,14 @@ window.addEventListener('wheel', e => {
   pageController()
   progressCounter()
 
-  bool && (document.querySelector(`section:nth-of-type(${deltaY ? counter1 : counter2})`).style.left = `${deltaY ? '-100vw' : '0'}`)
+  if (bool) {
+    (document.querySelector(`section:nth-of-type(${deltaY ? counter1 : counter2})`).style.left = `${deltaY ? '-100vw' : '0'}`)
+
+    document.querySelector(`section:nth-of-type(${deltaY ? counter1 : counter2}) .section-wrapper`).style.transform = `scale(${deltaY ? '1.5' : '1'})`
+
+    document.querySelector(`section:nth-of-type(${deltaY ? counter1 + 1 : counter2 + 1}) .section-wrapper`).style.transform = `scale(${deltaY ? '1' : '1.5'})`
+  }
+
 })
 
 document.querySelector('.page__btn--left').addEventListener('click', () => {
@@ -74,6 +94,10 @@ document.querySelector('.page__btn--left').addEventListener('click', () => {
 
   pageController() && (document.querySelector(`section:nth-of-type(${counter2})`).style.left = '0')
 
+  if (bool) {
+    document.querySelector(`section:nth-of-type(${counter2}) .section-wrapper`).style.transform = 'scale(1)'
+    document.querySelector(`section:nth-of-type(${counter2 + 1}) .section-wrapper`).style.transform = 'scale(1.5)'
+  }
 })
 
 document.querySelector('.page__btn--right').addEventListener('click', () => {
@@ -82,6 +106,10 @@ document.querySelector('.page__btn--right').addEventListener('click', () => {
 
   pageController() && (document.querySelector(`section:nth-of-type(${counter1})`).style.left = '-100vw')
 
+  if (bool) {
+    document.querySelector(`section:nth-of-type(${counter2}) .section-wrapper`).style.transform = 'scale(1)'
+    document.querySelector(`section:nth-of-type(${counter1}) .section-wrapper`).style.transform = 'scale(1.5)'
+  }
 })
 
 document.querySelector('.wineyards__img-wrapper--grapes').addEventListener('mouseover', () => {
